@@ -328,9 +328,25 @@ There are many free icon libraries available on the web. Here are a few:
 
 ## Installing the module
 
-Now that all basics are in place, reload the back office's "Module Catalog" page, in the "Front office features" section, you should find your module. Install it (or reset it if it is already installed).
+Now that all basics are in place, there are 2 options for installing your module : Back office, or cli using the Symfony console.
 
-During the module's installation, PrestaShop automatically creates a small `config.xml` file in the module's folder, which stores the module's information. You should be very careful when editing this file by hand.
+### Back office installation
+
+Reload the back office's "Module Catalog" page, in the "Front office features" section, you should find your module. Install it (or reset it if it is already installed).
+
+### Cli installation
+
+Access your PrestaShop instance folder, and run :
+
+```shell
+php bin/console prestashop:module install mymodulename
+```
+
+For more informations about this command, please read [prestashop:module command](/1.7/development/components/console/prestashop-module/)
+
+### After the installation
+
+During the module's installation, PrestaShop automatically creates a `config.xml` file in the module's folder, which stores the module's information. You should be very careful when editing this file by hand.
 
 ## Keeping things secure
 
@@ -349,7 +365,6 @@ header('Location: ../');
 exit;
 ```
 
-## Further reading
 
 {{< children />}}
 

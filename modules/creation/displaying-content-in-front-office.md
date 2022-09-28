@@ -431,9 +431,9 @@ Here is a list of Smarty variables that are common to all template pages:
 | $urls.img\_url            | URL for the theme's images folder.                            |
 | $urls.css\_url            | URL for the theme's CSS folder.                               |
 | $urls.js\_url             | URL for the theme's JavaScript folder.                        |
-| $module\_template\_dir    | URL for the current theme's folder.                           |
-| $module\_dir        | URL the modules folder.                                       |
-| mail\_dir ***(deprecated)***            | URL for the mail templates folder.                            |
+| $module\_template\_dir    | Path for the current theme's folder.                           |
+| $module\_dir        | Path the modules folder.                                       |
+| mail\_dir ***(deprecated)***            | Path for the mail templates folder.                            |
 | $urls.pic\_url            | URL for the pictures upload folder.                           |
 | $language.iso_code        | ISO code for the current language.                            |
 | come\_from ***(deprecated)***           | URL for the visitor's origin.                                 |
