@@ -26,6 +26,7 @@ These objects are always accessible through the context:
 - **Cookie.** Cookie instance.
 - **Link.** Link instance.
 - **Smarty.** Smarty instance.
+- **CurrentLocale.** The selected locale (notably in charge of price formating).
 
 These objects are only accessible for the customer Context:
 
@@ -61,4 +62,16 @@ First, [an empty context is created](https://github.com/PrestaShop/PrestaShop/bl
 - [Customer (if in FO)](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/config/config.inc.php#L272)
 - [Link](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/config/config.inc.php#L277)
 
-The Cart (and the Currency) are set in the Context when [initializing the FrontController instance in FO](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/classes/controller/FrontController.php#L428-L434)
+The currentLocale is set in the [abstract _Controller_ class in it's init method](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/classes/controller/Controller.php#L208). 
+
+The Cart and the Currency are set in the Context when [initializing the FrontController instance in FO](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/classes/controller/FrontController.php#L428-L434)
+
+Because of the way PrestaShop is built, the Cart context is sometimes set in the BackOffice section on the application, 
+for instance :
+
+- handle prices calculations in [AdminCartsController.php](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/controllers/admin/AdminCartsController.php#L912-L920).
+- handle various cart updates in the same [AdminCartsController.php](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/controllers/admin/AdminCartsController.php) file.
+
+And in the Webservice section of the application: 
+
+- [dispatcher.php](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/webservice/dispatcher.php#L34)
