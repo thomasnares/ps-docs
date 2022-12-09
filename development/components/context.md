@@ -64,10 +64,10 @@ First, [an empty context is created](https://github.com/PrestaShop/PrestaShop/bl
 
 The currentLocale is set in the [abstract _Controller_ class in it's init method](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/classes/controller/Controller.php#L208). 
 
-The Cart and the Currency are set in the Context when [initializing the FrontController instance in FO](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/classes/controller/FrontController.php#L428-L434)
+The Cart and the Currency are set in the Context when [initializing the FrontController instance in FO](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/classes/controller/FrontController.php#L428-L434).
 
 Because of the way PrestaShop is built, the Cart context is sometimes set in the BackOffice section on the application, 
-for instance :
+for instance:
 
 - handle prices calculations in [AdminCartsController.php](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/controllers/admin/AdminCartsController.php#L912-L920).
 - handle various cart updates in the same [AdminCartsController.php](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/controllers/admin/AdminCartsController.php) file.
