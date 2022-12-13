@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Watermark
 files:
   - src/Adapter/Product/Image/Uploader/ProductImageUploader.php
-locations:
-  - frontoffice
-type:
-  - action
+location:
+  - front office
+type: action
 hookAliases:
  - watermark
 ---
@@ -28,11 +27,10 @@ Aliases:
 
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
-Hook type: 
-  - action
+Hook type: action
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/src/Adapter/Product/Image/Uploader/ProductImageUploader.php](src/Adapter/Product/Image/Uploader/ProductImageUploader.php)
@@ -47,7 +45,7 @@ Located in:
     );
 ```
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 dispatchWithParameters(

@@ -5,10 +5,9 @@ hidden: true
 hookTitle: 
 files:
   - classes/Product.php
-locations:
-  - frontoffice
-type:
-  - 
+location:
+  - front office
+type: 
 hookAliases:
 ---
 
@@ -16,16 +15,15 @@ hookAliases:
 
 ## Information
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
 Hook type: 
-  - 
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/classes/Product.php](classes/Product.php)
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec(

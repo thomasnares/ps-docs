@@ -5,10 +5,9 @@ hidden: true
 hookTitle: 
 files:
   - src/Adapter/Presenter/Cart/CartPresenter.php
-locations:
-  - frontoffice
-type:
-  - 
+location:
+  - front office
+type: 
 hookAliases:
 ---
 
@@ -16,13 +15,13 @@ hookAliases:
 
 ## Information
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/src/Adapter/Presenter/Cart/CartPresenter.php](src/Adapter/Presenter/Cart/CartPresenter.php)
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec('overrideMinimalPurchasePrice', [

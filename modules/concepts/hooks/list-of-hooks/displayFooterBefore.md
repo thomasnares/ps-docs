@@ -5,10 +5,9 @@ hidden: true
 hookTitle: 
 files:
   - themes/classic/templates/_partials/footer.tpl
-locations:
-  - frontoffice
-type:
-  - display
+location:
+  - front office
+type: display
 hookAliases:
 ---
 
@@ -16,16 +15,15 @@ hookAliases:
 
 ## Information
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
-Hook type: 
-  - display
+Hook type: display
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/themes/classic/templates/_partials/footer.tpl](themes/classic/templates/_partials/footer.tpl)
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 {hook h='displayFooterBefore'}

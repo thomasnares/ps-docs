@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Alter template vars on the fly
 files:
   - classes/Mail.php
-locations:
-  - frontoffice
-type:
-  - 
+location:
+  - front office
+type: 
 hookAliases:
 ---
 
@@ -22,13 +21,13 @@ hookAliases:
 This hook is called when Mail::send() is called
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/classes/Mail.php](classes/Mail.php)
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec(

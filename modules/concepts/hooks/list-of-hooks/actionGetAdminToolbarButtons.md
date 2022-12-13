@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Allows to add buttons in any toolbar in the back office
 files:
   - classes/controller/AdminController.php
-locations:
-  - backoffice
-type:
-  - action
+location:
+  - back office
+type: action
 hookAliases:
 ---
 
@@ -22,11 +21,10 @@ hookAliases:
 This hook allows you to define descriptions of buttons to add in any toolbar of the back office
 {{% /notice %}}
 
-Hook locations: 
-  - backoffice
+Hook location:
+  - back office
 
-Hook type: 
-  - action
+Hook type: action
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/classes/controller/AdminController.php](classes/controller/AdminController.php)
@@ -41,7 +39,7 @@ Located in:
     ]
 ```
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec('actionGetAdminToolbarButtons', [

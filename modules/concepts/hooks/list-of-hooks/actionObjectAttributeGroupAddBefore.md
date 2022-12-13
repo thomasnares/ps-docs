@@ -5,11 +5,10 @@ hidden: true
 hookTitle: 
 files:
   - controllers/admin/AdminAttributesGroupsController.php
-locations:
-  - backoffice
-  - frontoffice
-type:
-  - action
+location:
+  - back office
+  - front office
+type: action
 hookAliases:
 ---
 
@@ -17,17 +16,16 @@ hookAliases:
 
 ## Information
 
-Hook locations: 
-  - backoffice
-  - frontoffice
+Hook location:
+  - back office
+  - front office
 
-Hook type: 
-  - action
+Hook type: action
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/controllers/admin/AdminAttributesGroupsController.php](controllers/admin/AdminAttributesGroupsController.php)
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec('actionObjectAttributeGroupAddBefore')

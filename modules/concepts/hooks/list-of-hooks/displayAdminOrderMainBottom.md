@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Admin Order Main Column Bottom
 files:
   - src/PrestaShopBundle/Resources/views/Admin/Sell/Order/Order/view.html.twig
-locations:
-  - backoffice
-type:
-  - display
+location:
+  - back office
+type: display
 hookAliases:
 ---
 
@@ -22,11 +21,10 @@ hookAliases:
 This hook displays content in the order view page at the bottom of the main column
 {{% /notice %}}
 
-Hook locations: 
-  - backoffice
+Hook location:
+  - back office
 
-Hook type: 
-  - display
+Hook type: display
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/src/PrestaShopBundle/Resources/views/Admin/Sell/Order/Order/view.html.twig](src/PrestaShopBundle/Resources/views/Admin/Sell/Order/Order/view.html.twig)
@@ -40,7 +38,7 @@ Located in:
     );
 ```
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 {{ renderhook('displayAdminOrderMainBottom', {'id_order': orderForViewing.id}) }}

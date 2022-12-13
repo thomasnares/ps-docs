@@ -5,10 +5,9 @@ hidden: true
 hookTitle: BO themes list extra content
 files:
   - src/PrestaShopBundle/Resources/views/Admin/Improve/Design/Theme/index.html.twig
-locations:
-  - backoffice
-type:
-  - display
+location:
+  - back office
+type: display
 hookAliases:
 ---
 
@@ -22,11 +21,10 @@ hookAliases:
 This hook displays content after the themes list in the back office
 {{% /notice %}}
 
-Hook locations: 
-  - backoffice
+Hook location:
+  - back office
 
-Hook type: 
-  - display
+Hook type: display
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/src/PrestaShopBundle/Resources/views/Admin/Improve/Design/Theme/index.html.twig](src/PrestaShopBundle/Resources/views/Admin/Improve/Design/Theme/index.html.twig)
@@ -40,7 +38,7 @@ Located in:
     );
 ```
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 {{ renderhook('displayAdminThemesListAfter', { 'current_theme_name': currentlyUsedTheme.get('name') }) }}

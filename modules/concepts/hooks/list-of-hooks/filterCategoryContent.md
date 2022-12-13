@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Filter the content page category
 files:
   - controllers/front/listing/CategoryController.php
-locations:
-  - frontoffice
-type:
-  - 
+location:
+  - front office
+type: 
 hookAliases:
 ---
 
@@ -22,8 +21,8 @@ hookAliases:
 This hook is called just before fetching content page category
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/controllers/front/listing/CategoryController.php](controllers/front/listing/CategoryController.php)
@@ -39,7 +38,7 @@ This hook has a `$chain` parameter set to `true` (hook will chain the return of 
     ),
 ```
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec(

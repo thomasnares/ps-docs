@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Content in the checkout funnel, on top of the personal information panel
 files:
   - themes/classic/templates/checkout/_partials/steps/personal-information.tpl
-locations:
-  - frontoffice
-type:
-  - display
+location:
+  - front office
+type: display
 hookAliases:
 ---
 
@@ -22,16 +21,15 @@ hookAliases:
 Display actions or additional content in the personal details tab of the checkout funnel.
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
-Hook type: 
-  - display
+Hook type: display
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/themes/classic/templates/checkout/_partials/steps/personal-information.tpl](themes/classic/templates/checkout/_partials/steps/personal-information.tpl)
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 {hook h='displayPersonalInformationTop' customer=$customer}

@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Category creation
 files:
   - classes/Category.php
-locations:
-  - frontoffice
-type:
-  - action
+location:
+  - front office
+type: action
 hookAliases:
  - categoryAddition
 ---
@@ -28,16 +27,15 @@ Aliases:
 This hook is displayed when a category is created
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
-Hook type: 
-  - action
+Hook type: action
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/classes/Category.php](classes/Category.php)
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec('actionCategoryAdd', ['category' => $this])

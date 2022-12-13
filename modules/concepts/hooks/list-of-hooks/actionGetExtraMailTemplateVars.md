@@ -5,10 +5,9 @@ hidden: true
 hookTitle: 
 files:
   - classes/Mail.php
-locations:
-  - frontoffice
-type:
-  - action
+location:
+  - front office
+type: action
 hookAliases:
 ---
 
@@ -16,18 +15,17 @@ hookAliases:
 
 ## Information
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
-Hook type: 
-  - action
+Hook type: action
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/classes/Mail.php](classes/Mail.php)
 
 This hook has an `$array_return` parameter set to `true` (module output will be set by name in an array, [see explaination here]({{< relref "/8/development/components/hook/dispatching-hook">}})).
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec(

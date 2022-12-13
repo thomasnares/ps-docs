@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Add variables in JavaScript object and Smarty templates
 files:
   - classes/controller/FrontController.php
-locations:
-  - frontoffice
-type:
-  - action
+location:
+  - front office
+type: action
 hookAliases:
 ---
 
@@ -22,11 +21,10 @@ hookAliases:
 Add variables to javascript object that is available in Front Office. These are also available in smarty templates in modules.your_module_name.
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
-Hook type: 
-  - action
+Hook type: action
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/classes/controller/FrontController.php](classes/controller/FrontController.php)
@@ -50,7 +48,7 @@ This hook has an `$array_return` parameter set to `true` (module output will be 
     }
 ```
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec(

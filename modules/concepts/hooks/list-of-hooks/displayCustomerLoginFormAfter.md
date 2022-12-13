@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Display elements after login form
 files:
   - themes/classic/templates/customer/authentication.tpl
-locations:
-  - frontoffice
-type:
-  - display
+location:
+  - front office
+type: display
 hookAliases:
 ---
 
@@ -22,16 +21,15 @@ hookAliases:
 This hook displays new elements after the login form
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
-Hook type: 
-  - display
+Hook type: display
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/themes/classic/templates/customer/authentication.tpl](themes/classic/templates/customer/authentication.tpl)
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 {hook h='displayCustomerLoginFormAfter'}

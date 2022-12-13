@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Filter the content page supplier
 files:
   - controllers/front/listing/SupplierController.php
-locations:
-  - frontoffice
-type:
-  - 
+location:
+  - front office
+type: 
 hookAliases:
 ---
 
@@ -22,15 +21,15 @@ hookAliases:
 This hook is called just before fetching content page supplier
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/controllers/front/listing/SupplierController.php](controllers/front/listing/SupplierController.php)
 
 This hook has a `$chain` parameter set to `true` (hook will chain the return of hook module, [see explaination here]({{< relref "/8/development/components/hook/dispatching-hook">}})).
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec(

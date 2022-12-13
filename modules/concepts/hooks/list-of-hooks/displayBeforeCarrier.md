@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Before carriers list
 files:
   - classes/checkout/CheckoutDeliveryStep.php
-locations:
-  - frontoffice
-type:
-  - display
+location:
+  - front office
+type: display
 hookAliases:
  - beforeCarrier
 ---
@@ -28,11 +27,10 @@ Aliases:
 This hook is displayed before the carrier list in Front Office
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
-Hook type: 
-  - display
+Hook type: display
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/classes/checkout/CheckoutDeliveryStep.php](classes/checkout/CheckoutDeliveryStep.php)
@@ -84,7 +82,7 @@ Located in:
     );
 ```
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec('displayBeforeCarrier', ['cart' => $this->getCheckoutSession()->getCart()])

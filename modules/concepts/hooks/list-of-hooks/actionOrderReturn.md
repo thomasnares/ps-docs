@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Returned product
 files:
   - controllers/front/OrderFollowController.php
-locations:
-  - frontoffice
-type:
-  - action
+location:
+  - front office
+type: action
 hookAliases:
  - orderReturn
 ---
@@ -28,11 +27,10 @@ Aliases:
 This hook is displayed when a customer returns a product 
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
-Hook type: 
-  - action
+Hook type: action
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/controllers/front/OrderFollowController.php](controllers/front/OrderFollowController.php)
@@ -46,7 +44,7 @@ Located in:
     );
 ```
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec('actionOrderReturn', ['orderReturn' => $orderReturn])

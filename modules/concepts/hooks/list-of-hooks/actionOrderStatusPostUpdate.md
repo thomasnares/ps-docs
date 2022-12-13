@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Post update of order status
 files:
   - classes/order/OrderHistory.php
-locations:
-  - frontoffice
-type:
-  - action
+location:
+  - front office
+type: action
 hookAliases:
  - postUpdateOrderStatus
 ---
@@ -28,11 +27,10 @@ Aliases:
 
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
-Hook type: 
-  - action
+Hook type: action
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/classes/order/OrderHistory.php](classes/order/OrderHistory.php)
@@ -48,7 +46,7 @@ Located in:
     );
 ```
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec('actionOrderStatusPostUpdate', [

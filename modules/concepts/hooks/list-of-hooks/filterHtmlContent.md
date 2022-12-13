@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Filter HTML field before rending a page
 files:
   - src/Adapter/Presenter/Object/ObjectPresenter.php
-locations:
-  - frontoffice
-type:
-  - 
+location:
+  - front office
+type: 
 hookAliases:
 ---
 
@@ -22,15 +21,15 @@ hookAliases:
 This hook is called just before fetching a page on HTML field
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/src/Adapter/Presenter/Object/ObjectPresenter.php](src/Adapter/Presenter/Object/ObjectPresenter.php)
 
 This hook has a `$chain` parameter set to `true` (hook will chain the return of hook module, [see explaination here]({{< relref "/8/development/components/hook/dispatching-hook">}})).
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec(

@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Maintenance Page
 files:
   - classes/controller/FrontController.php
-locations:
-  - frontoffice
-type:
-  - display
+location:
+  - front office
+type: display
 hookAliases:
 ---
 
@@ -22,16 +21,15 @@ hookAliases:
 This hook displays new elements on the maintenance page
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
-Hook type: 
-  - display
+Hook type: display
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/classes/controller/FrontController.php](classes/controller/FrontController.php)
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec('displayMaintenance', [])

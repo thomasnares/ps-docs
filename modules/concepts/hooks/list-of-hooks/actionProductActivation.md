@@ -5,10 +5,9 @@ hidden: true
 hookTitle: 
 files:
   - src/Adapter/Product/AdminProductDataUpdater.php
-locations:
-  - backoffice
-type:
-  - action
+location:
+  - back office
+type: action
 hookAliases:
 ---
 
@@ -16,16 +15,15 @@ hookAliases:
 
 ## Information
 
-Hook locations: 
-  - backoffice
+Hook location:
+  - back office
 
-Hook type: 
-  - action
+Hook type: action
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/src/Adapter/Product/AdminProductDataUpdater.php](src/Adapter/Product/AdminProductDataUpdater.php)
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 dispatchWithParameters('actionProductActivation', ['id_product' => (int) $product->id, 'product' => $product, 'activated' => $activate])

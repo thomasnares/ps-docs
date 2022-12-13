@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Homepage content
 files:
   - controllers/front/IndexController.php
-locations:
-  - frontoffice
-type:
-  - display
+location:
+  - front office
+type: display
 hookAliases:
  - home
 ---
@@ -28,16 +27,15 @@ Aliases:
 This hook displays new elements on the homepage
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
-Hook type: 
-  - display
+Hook type: display
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/controllers/front/IndexController.php](controllers/front/IndexController.php)
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec('displayHome')

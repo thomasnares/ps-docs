@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Customer account displayed in Front Office
 files:
   - themes/classic/templates/customer/my-account.tpl
-locations:
-  - frontoffice
-type:
-  - display
+location:
+  - front office
+type: display
 hookAliases:
  - customerAccount
 ---
@@ -28,16 +27,15 @@ Aliases:
 This hook displays new elements on the customer account page
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
-Hook type: 
-  - display
+Hook type: display
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/themes/classic/templates/customer/my-account.tpl](themes/classic/templates/customer/my-account.tpl)
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 {hook h='displayCustomerAccount'}

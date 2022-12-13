@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Customer registration form validation
 files:
   - classes/form/CustomerForm.php
-locations:
-  - frontoffice
-type:
-  - 
+location:
+  - front office
+type: 
 hookAliases:
 ---
 
@@ -22,15 +21,15 @@ hookAliases:
 This hook is called to a module when it has sent additional fields with additionalCustomerFormFields
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/classes/form/CustomerForm.php](classes/form/CustomerForm.php)
 
 This hook has an `$array_return` parameter set to `true` (module output will be set by name in an array, [see explaination here]({{< relref "/8/development/components/hook/dispatching-hook">}})).
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec('validateCustomerFormFields', ['fields' => $formFields], $moduleId, true)

@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Out-of-stock product
 files:
   - themes/classic/templates/catalog/_partials/product-details.tpl
-locations:
-  - frontoffice
-type:
-  - action
+location:
+  - front office
+type: action
 hookAliases:
  - productOutOfStock
 ---
@@ -28,16 +27,15 @@ Aliases:
 This hook displays new action buttons if a product is out of stock
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
-Hook type: 
-  - action
+Hook type: action
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/themes/classic/templates/catalog/_partials/product-details.tpl](themes/classic/templates/catalog/_partials/product-details.tpl)
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 {hook h='actionProductOutOfStock' product=$product}

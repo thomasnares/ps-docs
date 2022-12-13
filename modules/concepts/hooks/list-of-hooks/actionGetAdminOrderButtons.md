@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Admin Order Buttons
 files:
   - src/PrestaShopBundle/Controller/Admin/Sell/Order/OrderController.php
-locations:
-  - backoffice
-type:
-  - action
+location:
+  - back office
+type: action
 hookAliases:
 ---
 
@@ -22,11 +21,10 @@ hookAliases:
 This hook is used to generate the buttons collection on the order view page (see ActionsBarButtonsCollection)
 {{% /notice %}}
 
-Hook locations: 
-  - backoffice
+Hook location:
+  - back office
 
-Hook type: 
-  - action
+Hook type: action
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/src/PrestaShopBundle/Controller/Admin/Sell/Order/OrderController.php](src/PrestaShopBundle/Controller/Admin/Sell/Order/OrderController.php)
@@ -42,7 +40,7 @@ Located in:
     );
 ```
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 dispatchHook(
@@ -50,7 +48,7 @@ dispatchHook(
                 [
                     'controller' => $this,
                     'id_order' => $orderId,
-                    'actions_bar_buttons_collection' => $backOfficeOrderButtons,
+                    'actions_bar_buttons_collection' => $back officeOrderButtons,
                 ]
             )
 ```

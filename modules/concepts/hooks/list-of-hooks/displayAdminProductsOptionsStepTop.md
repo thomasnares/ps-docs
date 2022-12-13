@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Display new elements in back office product page, Options tab
 files:
   - src/PrestaShopBundle/Resources/views/Admin/Product/ProductPage/Panels/options.html.twig
-locations:
-  - backoffice
-type:
-  - display
+location:
+  - back office
+type: display
 hookAliases:
 ---
 
@@ -22,16 +21,15 @@ hookAliases:
 This hook launches modules when the back office product page is displayed
 {{% /notice %}}
 
-Hook locations: 
-  - backoffice
+Hook location:
+  - back office
 
-Hook type: 
-  - display
+Hook type: display
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/src/PrestaShopBundle/Resources/views/Admin/Product/ProductPage/Panels/options.html.twig](src/PrestaShopBundle/Resources/views/Admin/Product/ProductPage/Panels/options.html.twig)
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 {{ renderhook('displayAdminProductsOptionsStepTop', { 'id_product': productId }) }}

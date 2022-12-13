@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Carrier Update
 files:
   - controllers/admin/AdminCarriersController.php
-locations:
-  - backoffice
-type:
-  - action
+location:
+  - back office
+type: action
 hookAliases:
  - updateCarrier
 ---
@@ -28,16 +27,15 @@ Aliases:
 This hook is called when a carrier is updated
 {{% /notice %}}
 
-Hook locations: 
-  - backoffice
+Hook location:
+  - back office
 
-Hook type: 
-  - action
+Hook type: action
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/controllers/admin/AdminCarriersController.php](controllers/admin/AdminCarriersController.php)
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 Hook::exec('actionCarrierUpdate', [

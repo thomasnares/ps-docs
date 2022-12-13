@@ -5,10 +5,9 @@ hidden: true
 hookTitle: Product footer
 files:
   - themes/classic/templates/catalog/product.tpl
-locations:
-  - frontoffice
-type:
-  - display
+location:
+  - front office
+type: display
 hookAliases:
  - productfooter
 ---
@@ -28,16 +27,15 @@ Aliases:
 This hook adds new blocks under the product's description
 {{% /notice %}}
 
-Hook locations: 
-  - frontoffice
+Hook location:
+  - front office
 
-Hook type: 
-  - display
+Hook type: display
 
 Located in: 
   - [https://github.com/PrestaShop/PrestaShop/blob/8.0.x/themes/classic/templates/catalog/product.tpl](themes/classic/templates/catalog/product.tpl)
 
-## Hook call in codebase
+## Call of the Hook in the origin file
 
 ```php
 {hook h='displayFooterProduct' product=$product category=$category}
