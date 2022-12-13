@@ -11,7 +11,7 @@ type: action
 hookAliases:
 ---
 
-# Hook actionAdminAdministrationControllerPostProcess<HookName>Before
+# Hook actionAdminAdministrationControllerPostProcess&lt;HookName>Before
 
 ## Information
 

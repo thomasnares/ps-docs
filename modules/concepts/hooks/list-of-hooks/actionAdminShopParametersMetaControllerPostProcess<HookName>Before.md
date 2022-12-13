@@ -11,7 +11,7 @@ type: action
 hookAliases:
 ---
 
-# Hook actionAdminShopParametersMetaControllerPostProcess<HookName>Before
+# Hook actionAdminShopParametersMetaControllerPostProcess&lt;HookName>Before
 
 ## Information
 

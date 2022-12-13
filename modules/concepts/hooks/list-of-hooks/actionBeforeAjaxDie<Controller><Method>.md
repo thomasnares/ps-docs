@@ -11,7 +11,7 @@ type: action
 hookAliases:
 ---
 
-# Hook actionBeforeAjaxDie<Controller><Method>
+# Hook actionBeforeAjaxDie&lt;Controller>&lt;Method>
 
 ## Information
 

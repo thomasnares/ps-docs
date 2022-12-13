@@ -11,7 +11,7 @@ type: action
 hookAliases:
 ---
 
-# Hook action<Controller>OptionsModifier
+# Hook action&lt;Controller>OptionsModifier
 
 ## Information
 

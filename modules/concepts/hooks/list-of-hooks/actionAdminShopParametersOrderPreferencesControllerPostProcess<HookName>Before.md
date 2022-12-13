@@ -11,7 +11,7 @@ type: action
 hookAliases:
 ---
 
-# Hook actionAdminShopParametersOrderPreferencesControllerPostProcess<HookName>Before
+# Hook actionAdminShopParametersOrderPreferencesControllerPostProcess&lt;HookName>Before
 
 ## Information
 

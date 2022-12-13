@@ -11,7 +11,7 @@ type: action
 hookAliases:
 ---
 
-# Hook action<LegacyControllerName>ListingFieldsModifier
+# Hook action&lt;LegacyControllerName>ListingFieldsModifier
 
 ## Information
 

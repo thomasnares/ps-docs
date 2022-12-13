@@ -12,7 +12,7 @@ type: action
 hookAliases:
 ---
 
-# Hook actionObject<ClassName>DeleteAfter
+# Hook actionObject&lt;ClassName>DeleteAfter
 
 ## Information
 

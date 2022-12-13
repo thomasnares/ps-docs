@@ -11,7 +11,7 @@ type: action
 hookAliases:
 ---
 
-# Hook action<Controller>FormModifier
+# Hook action&lt;Controller>FormModifier
 
 ## Information
 

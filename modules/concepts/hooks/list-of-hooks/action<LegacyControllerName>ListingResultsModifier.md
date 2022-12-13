@@ -11,7 +11,7 @@ type: action
 hookAliases:
 ---
 
-# Hook action<LegacyControllerName>ListingResultsModifier
+# Hook action&lt;LegacyControllerName>ListingResultsModifier
 
 ## Information
 

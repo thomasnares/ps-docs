@@ -11,7 +11,7 @@ type: action
 hookAliases:
 ---
 
-# Hook actionAdminAdvancedParametersPerformanceControllerPostProcess<HookName>Before
+# Hook actionAdminAdvancedParametersPerformanceControllerPostProcess&lt;HookName>Before
 
 ## Information
 

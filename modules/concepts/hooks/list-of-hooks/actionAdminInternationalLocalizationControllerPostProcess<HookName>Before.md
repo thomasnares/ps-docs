@@ -11,7 +11,7 @@ type: action
 hookAliases:
 ---
 
-# Hook actionAdminInternationalLocalizationControllerPostProcess<HookName>Before
+# Hook actionAdminInternationalLocalizationControllerPostProcess&lt;HookName>Before
 
 ## Information
 

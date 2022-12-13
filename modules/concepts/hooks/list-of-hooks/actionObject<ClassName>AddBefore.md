@@ -12,7 +12,7 @@ type: action
 hookAliases:
 ---
 
-# Hook actionObject<ClassName>AddBefore
+# Hook actionObject&lt;ClassName>AddBefore
 
 ## Information
 

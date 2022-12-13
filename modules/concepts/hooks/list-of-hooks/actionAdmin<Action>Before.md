@@ -11,7 +11,7 @@ type: action
 hookAliases:
 ---
 
-# Hook actionAdmin<Action>Before
+# Hook actionAdmin&lt;Action>Before
 
 ## Information
 

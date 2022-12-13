@@ -11,7 +11,7 @@ type: action
 hookAliases:
 ---
 
-# Hook action<ClassName><Action>Before
+# Hook action&lt;ClassName>&lt;Action>Before
 
 ## Information
 

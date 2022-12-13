@@ -11,7 +11,7 @@ type: action
 hookAliases:
 ---
 
-# Hook actionBeforeUpdate<FormName>FormHandler
+# Hook actionBeforeUpdate&lt;FormName>FormHandler
 
 ## Information
 

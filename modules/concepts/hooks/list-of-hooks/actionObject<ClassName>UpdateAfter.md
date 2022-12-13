@@ -12,7 +12,7 @@ type: action
 hookAliases:
 ---
 
-# Hook actionObject<ClassName>UpdateAfter
+# Hook actionObject&lt;ClassName>UpdateAfter
 
 ## Information
 

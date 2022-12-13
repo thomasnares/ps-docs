@@ -11,7 +11,7 @@ type: action
 hookAliases:
 ---
 
-# Hook action<DefinitionId>GridPresenterModifier
+# Hook action&lt;DefinitionId>GridPresenterModifier
 
 ## Information
 
