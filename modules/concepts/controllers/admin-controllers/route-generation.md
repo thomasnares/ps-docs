@@ -111,7 +111,7 @@ You should be **extra careful** about these misused code and replace it accordin
 - If the controller has already been migrated in your minimum supported version, use the `Router` service directly with the appropriate route name and parameters.
 - If the controller hasn't been migrated as of your minimum supported version:
     - **For >= 1.7.5**, use `getAdminLink` method with the parameters **fully injected** in the function.
-    - **For < 1.7.5**, consider creating your own Link class adapter to switch to the appropriate routing mode for each PrestaShop version ([see example](https://github.com/PrestaShopCorp/ps_checkout/blob/v1.x.x/classes/Adapter/LinkAdapter.php)).
+    - **For < 1.7.5**, consider creating your own Link class adapter to switch to the appropriate routing mode for each PrestaShop version ([see example](https://github.com/PrestaShopCorp/ps_checkout/blob/v1.5.2/classes/Adapter/LinkAdapter.php)).
 
 {{% /notice %}}
 
@@ -135,9 +135,10 @@ This will only work for **one route/one controller** the association by action d
 {{% /notice %}}
 
 #### Javascript routes
-In order to generate a symfony route in javascript, you can use the [`Router` component](https://github.com/PrestaShop/PrestaShop/blob/1.7.8.x/admin-dev/themes/new-theme/js/components/router.js).
+In order to generate a symfony route in javascript, you can use the [`Router` component](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/admin-dev/themes/new-theme/js/components/router.ts).
 
 You can use it like this:
+
 ```
 import Router from '@components/router';
 
@@ -148,9 +149,11 @@ const route = this.router.generate('my_route', {parameters});
 It however uses a computed file that you might need to recompute if you modified some route settings.
 
 You can recompute it using this:
+
 ```
 php bin/console fos:js-routing:dump --format=json
 ```
+
 And put it in `admin-dev/themes/new-theme/js/fos_js_routes.json`
 
 {{% notice %}}

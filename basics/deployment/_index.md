@@ -1,6 +1,7 @@
 ---
 title: Deployment
-weight: 18
+weight: 40
+showOnHomepage: true
 ---
 
 # Deployment

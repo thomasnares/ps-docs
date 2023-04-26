@@ -20,7 +20,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.82.0'
+          hugo-version: '0.85.0'
           extended: true
 
       - name: Find version from branch name (pull request)
@@ -55,4 +55,6 @@ jobs:
           mv _current "src/content/$VERSION"
 
       - name: Build
+        env:
+          DEVDOCS_GITHUB_READ_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: cd src/ && hugo

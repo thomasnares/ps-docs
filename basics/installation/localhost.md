@@ -2,6 +2,7 @@
 title: Installing a local environment
 menuTitle: Development environment
 weight: 15
+mostViewedPage: true
 ---
 
 # Installing PrestaShop for development
@@ -16,14 +17,14 @@ Read [System Requirements][system-requirements].
 
 Installing any web-application locally requires that you first install the adequate environment, namely the Apache web server, the PHP language interpreter, the MySQL database server, and ideally a MySQL admin tool such as phpMyAdmin tool. 
 
-This is called an *AMP package: Apache+MySQL+PHP and the operating system, giving WAMP (Windows+Apache+MySQL+PHP), MAMP (Mac OS X+…) and LAMP (Linux+…). Since all of the items packaged are open-source, these installers are most of the time free.
+This is called an *AMP package: Apache+MySQL+PHP and the operating system, giving WAMP (Windows+Apache+MySQL+PHP), MAMP (macOS…) and LAMP (Linux+…). Since all of the items packaged are open-source, these installers are most of the time free.
 
 Here is a selection of free AMP installers:
 
-* [XAMPP](https://www.apachefriends.org/download.html) (Windows, Mac OS X, Linux, Solaris)
+* [XAMPP](https://www.apachefriends.org/download.html) (Windows, macOS, Linux, Solaris)
 * [WampServer](http://www.wampserver.com/) (Windows)
 * [EasyPHP](https://www.easyphp.org/) (Windows)
-* [MAMP](https://www.mamp.info/en/mamp/) (Windows, Mac OS X)
+* [MAMP](https://www.mamp.info/en/mamp/) (Windows, macOS)
 * [Laragon](https://laragon.org/) (Windows)
 
 To install LAMP on your computer follow these steps (tested on Debian Buster).
@@ -123,11 +124,11 @@ If you intend to work on PrestaShop itself, we suggest using Git to clone the so
 
 As stated above, if you decide to work on PrestaShop itself, it's best to clone the PrestaShop repository and work using git. Depending on the version of PrestaShop you want to work on, you will need to choose the right branch:
 
-* The [develop branch](https://github.com/PrestaShop/PrestaShop/tree/develop) contains the current work in progress for the next minor or major version.
+* The [develop branch](https://github.com/PrestaShop/PrestaShop/tree/8.0.x) contains the current work in progress for the next minor or major version.
     - **This is the right branch to contribute new features, refactors, small bug fixes, etc.**
 * The maintenance branches (_8.0.x, ..._) contains all patches made for each minor version.
     - For example, the _8.0.x_ branch contains all patches from 8.0.0 to 8.0.99.
-    - Whenever a new minor or major version is ready for release, a new maintenance branch is created. For example, _8.0.x_ for version 8.0.0, _8.1.x_ for 8.1.0, 8.2.x_ for 8.2.0, and so forth.
+    - Whenever a new minor or major version is ready for release, a new maintenance branch is created. For example, _8.0.x_ for version 8.0.0, _8.1.x_ for 8.1.0, and so forth.
     - **Only the most recent maintenance branch accepts new contributions**
     
 {{% /callout %}}
@@ -155,15 +156,25 @@ composer install
 # or alternatively:
 make composer
 ```
+
 ### JavaScript and CSS dependencies
 
 PrestaShop uses NPM to manage dependencies and [Webpack][webpack] to compile them into static assets. 
-You only need NodeJS 8.x (14.x recommended [get it here][nodejs]), NPM will take care of it all.
+You only need NodeJS 14.x (16.x recommended [get it here][nodejs]), NPM will take care of it all.
 
 ```bash
 cd /path/to/prestashop
 make assets
 ```
+
+You can also compile assets for the particular element of the system:
+
+- `make admin-default` - for the legacy back office theme
+- `make admin-new-theme` - for the new back office theme
+- `make front-core` - front office theme core assets
+- `make front-classic` - front office default theme assets
+- `make front` - all assets for the the front office
+- `make admin` - all assets for the the back office
 
 Alternatively, you can [compile assets][compile-assets] manually.
 
@@ -174,8 +185,6 @@ PrestaShop needs recursive write permissions on several directories:
 
 - ./admin-dev/autoupgrade
 - ./app/config
-- ./app/logs
-- ./app/Resources/translations
 - ./cache
 - ./config
 - ./download
@@ -190,13 +199,15 @@ PrestaShop needs recursive write permissions on several directories:
 - ./var
 
 You can set up the appropriate permissions using this command:
+
 ```bash
-$ chmod -R +w admin-dev/autoupgrade app/config app/logs app/Resources/translations cache config download img log mails modules override themes translations upload var
+$ chmod -R +w admin-dev/autoupgrade app/config var/logs cache config download img log mails modules override themes translations upload var
 ```
 
 If you do not have some of the folders above, please create them before changing permissions. For example:
+
 ```bash
-$ mkdir log app/logs
+$ mkdir log var/logs
 ```
 
 To ease up your life on a development environment, we suggest to make Apache run with your own user and group.
@@ -224,7 +235,7 @@ You may find this error message the first time you open up the Back Office.
 
 This problem may arise in case-insensitive file systems like MacOS due to a misconfiguration. Check your Apache configuration and make sure that the root directory path to your PrestaShop matches the capitalization of the actual system path exactly. A typical error is for example having a folder named `/path/to/PrestaShop` (capital P, capital S) and then configuring it in Apache as `/path/to/Prestashop` (missing the capital S).
 
-[getting-started-guide]: https://doc.prestashop.com/display/PS17/Getting+Started
+[getting-started-guide]: https://docs.prestashop-project.org/v.8-documentation/v/english/getting-started
 [system-requirements]: {{< relref "system-requirements" >}}
 [clone-the-repository]: {{< relref "/8/themes/getting-started/setting-up-your-local-environment" >}}
 [compile-assets]: {{< relref "/8/development/compile-assets" >}}

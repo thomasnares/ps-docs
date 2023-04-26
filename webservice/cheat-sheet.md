@@ -1,6 +1,7 @@
 ---
 title: Cheat sheet
 weight: 40
+showOnHomepage: true
 ---
 
 # Cheat sheet for Webservice
@@ -12,7 +13,7 @@ All these options can be added to your queries as query parameters (either `GET`
 | Key | Value | Description |
 |-----|-------|-------------|
 | **output_format** | `XML, JSON` | Change the output format |
-| **ps_method** | `GET, POST, PUT, DELETE` | Override the HTTP method used for the request |
+| **ps_method** | `GET, POST, PUT, PATCH, DELETE` | Override the HTTP method used for the request |
 
 ## Resource options
 

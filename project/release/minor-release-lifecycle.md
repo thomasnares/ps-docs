@@ -56,8 +56,8 @@ For example, if you are a payment module developer, just installing your module 
 
 If however you find a problem, you can
 
- - [Report this as a bug on GitHub](https://github.com/PrestaShop/PrestaShop/issues) (read [how to report issues]({{ relref "/8/contribute/contribute-reporting-issues/" }}))
- - Submit a bug fix by creating a [pull request](https://github.com/PrestaShop/PrestaShop/compare) (read the [contribution guidelines]({{ relref "/8/contribute/contribution-guidelines/" }}))
+ - [Report this as a bug on GitHub](https://github.com/PrestaShop/PrestaShop/issues) (read [how to report issues]({{< relref "/8/contribute/contribute-reporting-issues" >}}))
+ - Submit a bug fix by creating a [pull request](https://github.com/PrestaShop/PrestaShop/compare) (read the [contribution guidelines]({{< relref "/8/contribute/contribution-guidelines/" >}}))
 
 ## Release Candidate
 
@@ -98,4 +98,4 @@ The global duration for all the process is about 6 months. This is why we expect
 
 
 _(This article was originally published on our blog: [PrestaShop 1.7 Minor Release Lifecycle
-](https://build.prestashop.com/news/ps17-patch-release-lifecycle/))_
+](https://build.prestashop-project.org/news/ps17-minor-release-lifecycle/))_

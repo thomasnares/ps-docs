@@ -106,9 +106,10 @@ Don't forget to register your class as a service, you will need it to use it wit
     class: 'PrestaShop\PrestaShop\Core\Form\IdentifiableObject\DataProvider\ContactFormDataProvider'
 ```
 
-Note: if you use the above snippet of code outside of the `PrestaShop\PrestaShop\Core\Form\IdentifiableObject\DataProvider`, like a module, you need to import the classes that come from this namespace.
+Note: if you use the above snippet of code outside of the `PrestaShop\PrestaShop\Core\Form\IdentifiableObject\DataProvider` namespace, like in a module, you need to import the classes that come from this namespace.
 
-Example
+Example:
+
 ```php
 use PrestaShop\PrestaShop\Core\Form\IdentifiableObject\DataProvider\FormDataProviderInterface;
 ```
@@ -161,7 +162,7 @@ In the example above, we are declaring a specific service for this form based on
  ```text
 prestashop.core.form.builder.form_builder_factory:create
 ```
-  
+
 ...using two specific arguments:
 
 - The **Form Type**'s class name 
@@ -218,7 +219,7 @@ When creating your Form Data Handler you must implement the following interface:
 
     \PrestaShop\PrestaShop\Core\Form\IdentifiableObject\DataHandler\FormDataHandlerInterface
 
-In the example below, you can see a `ConctactFormDataHandler` that uses `ObjectModel` to create and update an instance of `Contact`:
+In the example below, you can see a `ContactFormDataHandler` that uses `ObjectModel` to create and update an instance of `Contact`:
 
 ```php
 <?php
@@ -274,11 +275,12 @@ prestashop.core.form.identifiable_object.data_handler.contact_form_data_handler:
   class: 'PrestaShop\PrestaShop\Core\Form\IdentifiableObject\DataHandler\ContactFormDataHandler'
 ```
 
-Note: if you use the above snippet of code outside of the `PrestaShop\PrestaShop\Core\Form\IdentifiableObject\DataProvider`, like a module, you need to import the classes that come from this namespace.
+Note: if you use the above snippet of code outside of the `PrestaShop\PrestaShop\Core\Form\IdentifiableObject\DataHandler` namespace, like in a module, you need to import the classes that come from this namespace.
 
-Example
+Example:
+
 ```php
-use PrestaShop\PrestaShop\Core\Form\IdentifiableObject\DataProvider\FormDataProviderInterface;
+use PrestaShop\PrestaShop\Core\Form\IdentifiableObject\DataHandler\FormDataHandlerInterface;
 ```
 
 ## Form Handler
@@ -460,7 +462,7 @@ and
 
 The core actually uses CQRS to handle data persistence, which raises a `DomainException` in case of a constraint error (for example, if the identifiable object you are trying to edit doesn't exist). This is handled in the controller by wrapping the code in a try-catch block, then flashing an error message accordingly.
 
-For more details, check out the [ContactsController source code on GitHub](https://github.com/PrestaShop/PrestaShop/blob/develop/src/PrestaShopBundle/Controller/Admin/Configure/ShopParameters/ContactsController.php).
+For more details, check out the [ContactsController source code on GitHub](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/src/PrestaShopBundle/Controller/Admin/Configure/ShopParameters/ContactsController.php).
 {{% /notice %}}
 
 

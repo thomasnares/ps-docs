@@ -67,7 +67,7 @@ label_with_help(label, help)
 
 ## Bootstrap
 
-Legacy templates use [Bootstrap 3](https://getbootstrap.com/docs/3.3/) while modern pages use the [PrestaShop UI Kit](https://build.prestashop.com/prestashop-ui-kit/) that is based on [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/). This means that you'll need to update some markup (especially CSS classes).
+Legacy templates use [Bootstrap 3](https://getbootstrap.com/docs/3.3/) while modern pages use the [PrestaShop UI Kit](https://build.prestashop-project.org/prestashop-ui-kit/) that is based on [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/). This means that you'll need to update some markup (especially CSS classes).
 
 {{% notice tip %}}
 If you aren't familiar with Bootstrap 4, check out their [article on migrating to v4](https://getbootstrap.com/docs/4.0/migration/), which explains the major changes from v3 to v4.
@@ -86,12 +86,15 @@ Be careful when copying translatable wordings, you must use the exact same strin
 {{% /notice %}}
 
 Example:
+
 ```php
 <?php
 // legacy controller
 $this->trans('Before activating the webservice, you must be sure to: ', array(), 'Admin.Advparameters.Help');
 ```
+
 ... must become:
+
 ```twig
 {{ 'Before activating the webservice, you must be sure to: '|trans({}, 'Admin.Advparameters.Help') }}
 ```

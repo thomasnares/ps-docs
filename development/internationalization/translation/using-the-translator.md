@@ -17,7 +17,7 @@ To translate wordings in PHP files, you first need an instance of the `Translato
 ```php
 <?php
 echo $translator->trans('This product is no longer available.', [], 'Shop.Notifications.Error');
-``` 
+```
 
 The `trans()` method takes three arguments:
 
@@ -26,7 +26,7 @@ The `trans()` method takes three arguments:
 3. `$domain` – The [translation domain][translation-domains] for that wording.
 
 {{% notice warning %}}
-Be aware that in Symfony-based Admin controllers, the second and third arguments have been swapped in order to allow `$replacements` to be optional. For more, see [FrameworkBundleAdminController](https://github.com/PrestaShop/PrestaShop/blob/1.7.6.0/src/PrestaShopBundle/Controller/Admin/FrameworkBundleAdminController.php#L275).
+Be aware that in Symfony-based Admin controllers, the second and third arguments have been swapped in order to allow `$replacements` to be optional. For more, see [FrameworkBundleAdminController](https://github.com/PrestaShop/PrestaShop/blob/8.0.0/src/PrestaShopBundle/Controller/Admin/FrameworkBundleAdminController.php#L299).
 {{% /notice %}}
 
 ### Inside controllers

@@ -22,12 +22,12 @@ Open a command line on your (empty) working directory, then:
     ```bash
     git clone https://github.com/PrestaShop/PrestaShop.git
     ```
-    
+
 2. Install dependencies
     ```bash
     composer install
     ```
-    
+
 Using git you can choose your PrestaShop version:
 ```bash
 git checkout 8.0
@@ -36,7 +36,7 @@ git checkout 8.0
 Also we would warn you to test your final result with a zip release, just for safety (since vendor version might be slightly different).
 
 {{% notice note %}}
-If you haven’t done it yet, we strongly recommend you to read our article [Set Up Your Git For Contributing](https://build.prestashop.com/howtos/misc/set-up-your-git-for-contributing/)
+If you haven’t done it yet, we strongly recommend you to read our article [Set Up Your Git For Contributing](https://build.prestashop-project.org/howtos/misc/set-up-your-git-for-contributing/)
 {{% /notice %}}
 
 ## Building your .gitignore file
@@ -58,7 +58,7 @@ Generally, you shouldn’t version the following types of files:
 We suggest that you build your own using https://gitignore.io.
 
 {{% notice note %}}
-If you are building a full project for a client, you can read our article on [building a gitignore for PrestaShop](https://build.prestashop.com/howtos/misc/prestashop-perfect-gitignore/).
+If you are building a full project for a client, you can read our article on [building a gitignore for PrestaShop](https://build.prestashop-project.org/howtos/misc/prestashop-perfect-gitignore/).
 {{% /notice %}}
 
 ## Create your theme from the Classic Theme

@@ -8,7 +8,7 @@ How to benchmark your PrestaShop Shop (Front-office)
 
 ## Automatically benchmark with `Gatling` (recommended)
 
-Follow instruction on **[Back-Office benchmark page]({{ relref "/8/scale/benchmark/back-office/" }})** to get a pre-populated shop and to run Gatling scenarios on it.
+Follow instruction on **[Back-Office benchmark page]({{< relref "/8/scale/benchmark/back-office" >}})** to get a pre-populated shop and to run Gatling scenarios on it.
 
 **[PrestaShop performance project](https://github.com/PrestaShop/performance-project)** on Github includes Front-Office scenarios you can edit to get your own scenarios running.
 
@@ -20,7 +20,7 @@ Try to always use the latest available version <a href="http://download.joedog.o
  
 ### Setup siege configuration
 
-Create a txt file ```url.txt``` with various urls from your shop: (prepend with the domain of your shop)
+Create a txt file `url.txt` with various urls from your shop: (prepend with the domain of your shop)
 
 ```text
 http://localhost:8080/
@@ -118,5 +118,3 @@ concurrent user setting.
 ##### Failed transactions
 
 Closely related to Availability, the number of pages which have failed to load (404, 503, ...)
-
-

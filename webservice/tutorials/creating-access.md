@@ -16,7 +16,7 @@ Go in the PrestaShop back office, open the "Web service" page under the "Advance
 
 {{< figure src="../../img/enable_webservice.png" title="Enabling Webservice" >}}
 
-### Programatically
+### Programmatically
 
 The Webservice switch is stored in the configuration table of PrestaShop.
 
@@ -69,15 +69,15 @@ $apiAccess->save();
 This first code allows you to pass the authentication layer. You also need access to the resources you expect to use.
 
 We need the Api account ID in order to grant it access, and an array having the resource name as key and the array of methods allowed as value.
-The available resources can be found in [`WebserviceRequest::getResources()` (link to definition)](https://github.com/PrestaShop/PrestaShop/blob/1.7.6.0/classes/webservice/WebserviceRequest.php#L285]).
+The available resources can be found in [`WebserviceRequest::getResources()` (link to definition)](https://github.com/PrestaShop/PrestaShop/blob/8.0.0/classes/webservice/WebserviceRequest.php#L282]).
 
 For instance is we want to give all permissions for customers and orders resources for the account we previously created:
 
 ```php
 <?php
 $permissions = [
-  'customers' => ['GET' => 1, 'POST' => 1, 'PUT' => 1, 'DELETE' => 1, 'HEAD' => 1],
-  'orders' => ['GET' => 1, 'POST' => 1, 'PUT' => 1, 'DELETE' => 1, 'HEAD' => 1],
+  'customers' => ['GET' => 1, 'POST' => 1, 'PUT' => 1, 'PATCH' => 1, 'DELETE' => 1, 'HEAD' => 1],
+  'orders' => ['GET' => 1, 'POST' => 1, 'PUT' => 1, 'PATCH' => 1, 'DELETE' => 1, 'HEAD' => 1],
 ];
 
 WebserviceKey::setPermissionForAccount($apiAccess->id, $permissions);

@@ -1,5 +1,6 @@
 ---
 title: Optimize your PrestaShop
+showOnHomepage: true
 ---
 
 # Optimize your PrestaShop performance
@@ -67,6 +68,7 @@ post_max_size = 22M
 max_input_vars = 20000
 allow_url_fopen = on
 ```
+
 ### 2) PHP & File system
 
 It is well known that PHP does not manage file systems very well.

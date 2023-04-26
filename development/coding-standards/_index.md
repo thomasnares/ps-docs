@@ -47,7 +47,7 @@ You can run it using the following command:
 php ./vendor/bin/php-cs-fixer fix
 ```
 
-The prestashop specific configuration file [can be found here](https://github.com/PrestaShop/PrestaShop/blob/develop/.php-cs-fixer.dist.php). Also, you can also use the provided [git pre-commit](https://github.com/PrestaShop/PrestaShop/tree/develop/.github/contrib) sample in order to make sure you never forget to make your code compliant!
+The prestashop specific configuration file [can be found here](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/.php-cs-fixer.dist.php). Also, you can also use the provided [git pre-commit](https://github.com/PrestaShop/PrestaShop/tree/8.0.x/.github/contrib) sample in order to make sure you never forget to make your code compliant!
 
 ### Documenting types
 
@@ -156,6 +156,7 @@ You are able to get global types in the `admin-dev/themes/new-theme/js/types` fo
 ```bash
 npm run lint-fix
 ```
+
 ## HTML, CSS (Sass), Twig & Smarty code conventions
 
 HTML, CSS (Sass), Twig and Smarty files MUST follow the [Mark Otto's coding standards](https://codeguide.co/).
@@ -202,7 +203,7 @@ All PrestaShop files MUST start with the PrestaShop license block:
  *
  * Do not edit or add to this file if you wish to upgrade PrestaShop to newer
  * versions in the future. If you wish to customize PrestaShop for your
- * needs please refer to https://devdocs.prestashop.com/ for more information.
+ * needs please refer to https://devdocs.prestashop-project.org/ for more information.
  *
  * @author    PrestaShop SA and Contributors <contact@prestashop.com>
  * @copyright Since 2007 PrestaShop SA and Contributors

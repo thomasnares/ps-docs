@@ -110,6 +110,7 @@ class Ps_DemoCQRSHooksUsage extends Module
     // ...
 }
 ```
+
 This hook, through `$params` array, received `GridDefinition` that defines how the grid is rendered. See [Grid definition]({{< relref "/8/development/components/grid/#grid-definition" >}}) for more information.  
 In this sample a new toggable column which determines if the customer is eligible to review products is added just after another column which has id `optin`. The sample code also demonstrates how add new filter.
 
@@ -159,7 +160,6 @@ class CustomerReviewController extends FrameworkBundleAdminController
 - As this is a Symfony controller, we must configure the related routing (read more about [symfony routing](https://symfony.com/doc/current/routing.html)), which means create a route in `ps_democqrshooksusage/config/routes.yml` file:
 
 ```yml
-
 ps_democqrshooksusage_toggle_is_allowed_for_review:
   path: demo-cqrs-hook-usage/{customerId}/toggle-is-allowed-for-review
   methods: [POST]
@@ -175,7 +175,7 @@ Route name `ps_democqrshooksusage_toggle_is_allowed_for_review` matches the one 
 ### Extending grid query builder
 
 By just extending grid definition we won't be able to display any data since we need to fetch it first. Luckily, we can add additional sql
-conditions by extending [doctrine's query builder](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/query-builder.html).
+conditions by extending [doctrine's query builder](https://www.doctrine-project.org/projects/doctrine-orm/en/2.7/reference/query-builder.html).
 
 ```php
 <?php
@@ -341,6 +341,3 @@ private function updateCustomerReviewStatus(array $params)
 when we created the switch type form we named it `is_allowed_for_review`. By using the same name we can get the state (on or off).
 This hook receives from `$params` the form data, that you can retrieve like this: `$params['form_data']`.
 All the form data is available here, including `is_allowed_for_review` data which comes from the switch.
-
-You can find example module here: 
-https://github.com/PrestaShop/example-modules/tree/master/demoextendsymfonyform2

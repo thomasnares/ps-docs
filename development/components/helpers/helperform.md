@@ -10,6 +10,8 @@ This helper can used to generate HTML forms easily.
 Note that HelperForm is based on Smarty and Bootstrap 3, and therefore is discouraged in Symfony controllers.
 {{% /notice %}}
 
+{{< searchTags tags="FormHelper, HelperTable" >}}
+
 ## Basic usage
 
 Removing all the optional fields, this is how to build a basic HelperForm element:
@@ -200,7 +202,7 @@ $formDeclaration = [
     'succcess'    => $this->l('Form saved!'),
     'error'       => $this->l('Oops, something went wrong.'),
 ];
-``` 
+```
 
 ### Buttons
 
@@ -442,3 +444,49 @@ Note that you have to use the "t" CSS class on your labels in order to have the 
 The type variable of the element declaration makes it possible to generate just about any kind of `<input>` element: `text`, `select`, `textarea`, `radio`, `checkbox`, `file` and many others! See the list of available types [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input). 
 
 You can also use some PrestaShop specific: `shop`, `asso_shop`, `free`, `color`. Try them out!
+
+## Example usage in native modules
+
+`HelperForm` is implemented into several native modules, such as [`ContactForm`](https://github.com/PrestaShop/contactform).
+
+In this module, 
+
+- a [`renderForm()` method is created](https://github.com/PrestaShop/contactform/blob/v4.4.1/contactform.php#L108), 
+- the [`form declaration is declared](https://github.com/PrestaShop/contactform/blob/v4.4.1/contactform.php#L120-L189), 
+- then a [`HelperForm` is instantiated](https://github.com/PrestaShop/contactform/blob/v4.4.1/contactform.php#L190),
+- finally the html content is [generated and returned](https://github.com/PrestaShop/contactform/blob/v4.4.1/contactform.php#L203). 
+
+```php
+/**
+ * @return string
+*/
+protected function renderForm()
+{
+   $form = [
+      // ... form declaration as described on this page
+      // refer to https://github.com/PrestaShop/contactform/blob/v4.4.1/contactform.php#L120-L189
+      // for complete implementation
+   ];
+
+   $helper = new HelperForm();
+   // HelperForm settings, refer to https://github.com/PrestaShop/contactform/blob/v4.4.1/contactform.php#L190-L201
+   // for complete implementation
+
+   return $helper->generateForm([$form]);
+}
+```
+
+Then, in the `getContent()` method of this module, the `renderForm()` method is called:
+
+```php
+/**
+ * @return string
+   */
+public function getContent()
+{
+   // ...
+   $html .= $this->renderForm();
+   // ...
+   return $html;
+}
+```

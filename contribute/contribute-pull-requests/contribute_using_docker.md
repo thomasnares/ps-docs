@@ -31,7 +31,6 @@ Once you have forked the project, you need to download it to your computer.
 
 For instance, if your GitHub nickname is `preston`, this is what you should do in your terminal:
 
-
 ```
 git clone https://github.com/preston/PrestaShop.git
 ```
@@ -61,7 +60,7 @@ prestashop-git | \n* Almost ! Starting web server now\n
 
 At this point, your PrestaShop installation is ready and the website is available at http://localhost:8001. 
 
-The default credentials for the back-office are `demo@prestashop.com` / `prestashop_demo`.
+The default credentials for the back-office are `demo@prestashop.com` / `Correct Horse Battery Staple`.
 
 Default MySQL credentials to connect using 3rd party programs like Sequel Pro and others:
 Username: `root`
@@ -96,7 +95,7 @@ A good practice is to write meaningful commits messages: it's better to have "co
 ### Launch the test suite
 
 Your changes now sounds ok, and you're almost ready to share your changes with the community.
-Before all, you may ensure your changes don't break everything: this is why we have multiple test suites you can use. Want to read more about tests in PrestaShop? Head to [this]({{< relref "/8/testing/introduction.md" >}}) page.
+Before all, you may ensure your changes don't break everything: this is why we have multiple test suites you can use. Want to read more about tests in PrestaShop? Head to [this]({{< relref "/8/testing/" >}}) page.
 
 You can execute it in your dockerized PrestaShop application without altering your website (it uses a specific database).
 

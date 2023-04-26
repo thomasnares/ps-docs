@@ -1,6 +1,7 @@
 ---
 title: Installation
-weight: 15
+weight: 20
+showOnHomepage: true
 ---
 
 # Installation

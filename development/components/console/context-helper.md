@@ -14,7 +14,8 @@ It loads the needed property in `Context` using, when needed, a fake Employee or
 
 It is available as a Symfony service `prestashop.adapter.legacy_context_loader`.
 
-Example
+Example:
+
 ```
 MyCustomCommand extends ContainerAwareCommand
 {
@@ -33,4 +34,4 @@ MyCustomCommand extends ContainerAwareCommand
 });
 ```
 
-You can load a generic context thanks to `loadGenericContext()` or choose which data you want to initialize using the method of [LegacyContextLoader](https://github.com/PrestaShop/PrestaShop/blob/1.7.8.x/src/Adapter/LegacyContextLoader.php).
+You can load a generic context thanks to `loadGenericContext()` or choose which data you want to initialize using the method of [LegacyContextLoader](https://github.com/PrestaShop/PrestaShop/blob/8.0.x/src/Adapter/LegacyContextLoader.php).

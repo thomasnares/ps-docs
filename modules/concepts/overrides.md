@@ -28,7 +28,7 @@ Before creating an override, check the existing features can help you:
 There are many events triggered on each controller of PrestaShop. They can be used
 for displaying additional content or executing module actions.
 
-See [the hooks chapter]({{< ref "1.7/modules/concepts/hooks/" >}}) for more details.
+See [the hooks chapter]({{< ref "8/modules/concepts/hooks/" >}}) for more details.
 
 ### Classes
 
@@ -65,13 +65,13 @@ Core controllers can be reused in a module as well, without being erased, thanks
 
 This allows a controller to be maintained easily, with its own identity but with the parent features.
 
-See [the controllers chapter]({{< ref "1.7/modules/concepts/controllers/" >}}) for more details.
+See [the controllers chapter]({{< ref "8/modules/concepts/controllers/" >}}) for more details.
 
 ### Service overrides
 
 PrestaShop is migrating to Symfony, and the parts migrated rely on Symfony container which enables service overrides and decorations. This is similar to overrides but avoids class erasing.
 
-See [the Symfony services chapter]({{< ref "1.7/modules/concepts/services/" >}}) for more details.
+See [the Symfony services chapter]({{< ref "8/modules/concepts/services/" >}}) for more details.
 
 ### Contributing
 
@@ -154,7 +154,6 @@ Despite a module having different files, the main one, additional classes, etc.,
 To override a module's instance class, you have to extend it, giving the extended class the same name and adding the `Override` suffix:
 
 ```php
-
 class BlockUserInfoOverride extends BlockUserInfo
 {
 	public function hookDisplayNav($params)
@@ -164,6 +163,7 @@ class BlockUserInfoOverride extends BlockUserInfo
 	}
 }
 ```
+
 You must put the file in `/override/modules/blockuserinfo/blockuserinfo.php`
 
 After adding an override, don't forget to clean the cache. You can do it from the back office or by CLI using the Symfony console.
@@ -176,7 +176,6 @@ You may even create a module that overrides other modules! For instance:
 To override a module's front/admin controller class, you have to extend it, giving the extended class the same name and adding the `Override` suffix:
 
 ```php
-
 class AdminBlockListingControllerOverride extends AdminBlockListingController
 {
 	public function displayAjaxSaveColor()
@@ -196,6 +195,7 @@ class AdminBlockListingControllerOverride extends AdminBlockListingController
 	}
 }
 ```
+
 You must put the file in `/override/modules/blockreassurance/controllers/admin/AdminBlockListingController.php`
 
 After adding an override, don't forget to clean the cache. You can do it from the back office or by CLI using the Symfony console.

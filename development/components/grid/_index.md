@@ -100,7 +100,7 @@ prestashop.core.grid.definition.factory.product_grid_definition_factory:
     class: 'PrestaShop\PrestaShop\Core\Grid\Definition\Factory\ProductGridDefinitionFactory'
     parent: 'prestashop.core.grid.definition.factory.abstract_grid_definition'
     public: true
-``` 
+```
 
 Most of the time you won't be creating Grid Definitions by yourself but delegating this task to other services,
 but in case you need to create a Grid Definition by hand, here's how you can do that.
@@ -114,7 +114,7 @@ $productsGridDefinition = $productsGridDefinitionFactory->getDefinition();
 $productsGridDefinition->getColumns(); // collection of defined columns
 $productsGridDefinition->getName(); // "Products"
 $productsGridDefinition->getId(); // "products"
-``` 
+```
 
 ## Search Criteria
 
@@ -132,7 +132,7 @@ Search Criteria is immutable. This means that once a Search Criteria object is c
 
 ### Creating Search Criteria
 
-Even though most of the time Search Criteria will be created using the [Filters component](#), you can still
+Even though most of the time Search Criteria will be created using the [Filters component]({{ relref "/8/development/components/grid/tutorials/work-with-search-form/" }}), you can still
 create it manually. Grid provides a simple implementation for it.
 
 ```php

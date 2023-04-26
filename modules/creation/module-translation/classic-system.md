@@ -243,7 +243,6 @@ sprintf=['[foo]' => 'some replacement, '%bar%' => 'something else']
 {{% /notice %}}
 
 
-
 #### Interpolating HTML
 
 You may need to add HTML content in your translated string. Writing it directly in the string (original or translated) won't work, as the special characters would be escaped to avoid XSS security issues.
@@ -401,7 +400,7 @@ $this->l('Some '. $var . ' wording');
 public function translate($wording) {
    $this->l($wording);
 }
-``` 
+```
 
 ### Language codes
 
@@ -415,5 +414,5 @@ In the meantime, refer to this list for the equivalences between language codes 
 
 [iso-619-1]: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 [ietf-language-tags]: https://en.wikipedia.org/wiki/IETF_language_tag
-[legacy-to-standard]: https://github.com/PrestaShop/PrestaShop/blob/1.7.6.x/app/Resources/legacy-to-standard-locales.json
+[legacy-to-standard]: https://github.com/PrestaShop/PrestaShop/blob/8.0.x/app/Resources/legacy-to-standard-locales.json
 [new-translation-system]: {{< ref "new-system" >}}

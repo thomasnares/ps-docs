@@ -82,7 +82,7 @@ composer install
 
 ### Compile assets
 
-Static assets are not present in the repository and need to be compiled (we explained why in [this article](https://build.prestashop.com/news/open-question-not-commiting-assets-anymore/)).
+Static assets are not present in the repository and need to be compiled (we explained why in [this article](https://build.prestashop-project.org/news/open-question-not-commiting-assets-anymore/)).
 You will need `npm` installed on your environment (here is the documentation about [how to compile assets][compile-assets]), then you can simply run:
 
 ```bash
@@ -96,7 +96,6 @@ PrestaShop needs recursive write permissions on several directories:
 
 - /admin-dev/autoupgrade/
 - /app/logs
-- /app/Resources/translations
 - /cache
 - /config/themes
 - /download
@@ -144,6 +143,6 @@ A good practice is to write meaningful commits labels: it's better to have "Corr
 
 See [Submit a Pull Request]({{< relref "create-pull-request" >}}).
 
-[getting-started-guide]: https://doc.prestashop.com/display/PS17/Getting+Started
+[getting-started-guide]: https://docs.prestashop-project.org/1.7-documentation/user-guide
 [system-requirements]: {{< relref "/8/basics/installation/system-requirements" >}}
 [compile-assets]: {{< relref "/8/development/compile-assets" >}}

@@ -25,7 +25,7 @@ There are several Doctrine plugins which allows to handle multi lang fields easi
 
 {{% notice note %}}
 **Namespace and autoload**
-The content of this documentation relies on **namespaces** which need to be defined in your module's autoload, we won't cover this part here if you need more information please read [how to setup composer in a module]({{< ref "1.7/modules/concepts/composer#setup-composer-in-a-module" >}})
+The content of this documentation relies on **namespaces** which need to be defined in your module's autoload, we won't cover this part here if you need more information please read [how to setup composer in a module]({{< ref "8/modules/concepts/composer#setup-composer-in-a-module" >}})
 {{% /notice %}}
 
 {{% notice tip %}}
@@ -394,7 +394,7 @@ class QuoteLang
 If you need more info about how to setup and handle Doctrine relations, you can read the [Symfony documentation](https://symfony.com/doc/4.4/doctrine/associations.html) about it.
 Focus on the `Annotation` sections since PrestaShop only handles this kind of configuration from modules' Entities. Here are some additional link that might be useful:
 - [Doctrine Association mapping](https://www.doctrine-project.org/projects/doctrine-orm/en/2.7/reference/association-mapping.html)
-- [Mastering Doctrine Relationships in Symfony 3 (video tutorial)](https://symfonycasts.com/screencast/symfony3-doctrine-relations)
+- [Mastering Doctrine Relationships in Symfony 4 (video tutorial)](https://symfonycasts.com/screencast/symfony4-doctrine-relations)
 {{% /notice %}}
 
 ## Create a translated entity

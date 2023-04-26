@@ -53,7 +53,7 @@ Indexation results are stored in specific SQL tables. This allows to query flat 
 ## Flow of the rendering process for displaying products on a category page
 
 1. The core `CategoryController` executes a hook, searching for modules able to answer to a search request like "I need to fetch the products for the category with `id_category` === 4". See "How it's plugged on the Core" below.
-2. A module (e.g. `blocklayered`) responds by returning an instance of a `ProductSearchProviderInterface` of its choosing
+2. A module (e.g. `ps_facetedsearch`) responds by returning an instance of a `ProductSearchProviderInterface` of its choosing
 3. The `CategoryController` retrieves the `ProductSearchProviderInterface` returned by the module and uses it to get the products.
 4. The search provider returns a `ProductSearchResult`, it contains:
     - the products (which may just be an array like `[['id_product' => 2], ['id_product' => 3]]` - the core will add the missing data)
@@ -94,7 +94,7 @@ Filter results are cached inside SQL in order to improve performance. Same query
 
 There were so many hooks used in the module that the hook actions have been moved outside of the main file, unlike many other modules. A hook dispatcher is in charge of linking the main module file and calling the right hooks. Hook actions will be found in `src/Hook`
 
-### MysQL adapter
+### MySQL adapter
 
 Inside `src/Adapter` is the code responsible for mapping faceted search queries to MySQL queries
 

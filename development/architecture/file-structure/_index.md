@@ -90,7 +90,7 @@ Contains all the legacy classes, including:
  
 - Object models 
 - Utility classes (like `Db`, `Helper`, `Tools`...)
-- Base controlllers (like `FrontController`, `AdminController`...)
+- Base controllers (like `FrontController`, `AdminController`...)
 
 ### /config
 
@@ -223,7 +223,7 @@ It contains the following subdirectories:
 
 - `/assets`: Script that allow building all static assets from sources.
 - `/build`: Used to create release packages.
-- `/foreignkeyGenerator`: Creates forign keys for all tables (for educational purposes only)
+- `/foreignkeyGenerator`: Creates foreign keys for all tables (for educational purposes only)
 - `/profiling`: Profiling tools for legacy classes
 
 ### /translations

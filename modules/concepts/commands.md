@@ -31,7 +31,7 @@ You need to create the file and register it as a "command".
 
 First you need to setup your composer file, you will find more info about it in [Setup composer][setup-composer]
 
-[setup-composer]: {{< ref "/8/modules/concepts/services/_index.md#setup-composer" >}}
+[setup-composer]: {{< ref "/8/modules/concepts/composer.md" >}}
 
 ### Creation of the command
 
@@ -81,7 +81,7 @@ The command should be now available using `./bin/console your-module:export`.
 
 We use the Symfony Console with nothing specific to PrestaShop.
 
-You can learn everything about this component in [their documentation](https://symfony.com/doc/4.4/console.html) in version 3.4.
+You can learn everything about this component in [their documentation](https://symfony.com/doc/4.4/console.html) in version 4.4.
 
 To sum up, there is a list of useful links:
 

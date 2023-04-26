@@ -19,7 +19,7 @@ In some cases, you might encounter this alternative:
 
 ```php
 $db = Db::getInstance(_PS_USE_SQL_SLAVE_);
-````
+```
 
 If PrestaShop's database user allows the use of MySQL slave servers in its architecture, then this last instance's connection can be done on the slave servers.
 You should only use the `PS_USE_SQL_SLAVE` argument when making read-only queries (`SELECT`, `SHOW`, etc.), and only if these do not need a result to be immediately updated with a result. If you make a query on a table right after inserting data in that same table, you should make that query on the master server.
@@ -51,7 +51,9 @@ As the method deals with raw SQL requests, the `_DB_PREFIX_` must be used.
 The result is an array of associative arrays, containing an array for each row.
 It should only be used for read only queries: SELECT, SHOW, etc.
 
-#### Retrieving only the first row
+#### Retrieving only the first row: getRow()
+
+Using getRow() method will retrieve the first row of your query:
 
 ```php
 $request = "SELECT `id_table` FROM `' . _DB_PREFIX_ . 'some_table` ...";
@@ -95,6 +97,7 @@ Be careful, if your request has a limit, the method `numRows()` is limited too. 
 ```php
 $db->Affected_Rows();
 ```
+
 Returns the number of rows impacted by the latest `INSERT`, `UPDATE`, `REPLACE` or `DELETE` query.
 
 ### Execute a raw SQL request (UPDATE, INSERT...)
@@ -164,6 +167,7 @@ $result = $db->insert(
     ]
 );
 ```
+
 This will execute the `INSERT` SQL command only once.
 
 `_DB_PREFIX_` will be automatically prefixed to the table name.
@@ -180,6 +184,7 @@ $result = $db->update('db_table', array(
     'date_upd' => date('Y-m-d H:i:s'),
 ), 'id_table = 10', 1, true);
 ```
+
 Method signature: `update($table, $data, $where = '', $limit = 0, $null_values = false, $use_cache = true, $add_prefix = true)`
 
 `_DB_PREFIX_` will be automatically prefixed to the table name if `$add_prefix` is `true` (by default).
@@ -192,6 +197,7 @@ The result is boolean saying if the request was properly executed or not.
 /** @var bool $result */
 $result = $db->delete('db_table', 'id_table = 10');
 ```
+
 Method signature: `delete($table, $where = '', $limit = 0, $use_cache = true, $add_prefix = true)`
 
 `_DB_PREFIX_` will be automatically prefixed to the table name if `$add_prefix` is `true` (by default).

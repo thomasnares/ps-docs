@@ -1,6 +1,7 @@
 ---
 title: Getting Started
 weight: 10
+showOnHomepage: true
 ---
 
 # Getting Started
@@ -16,13 +17,14 @@ The PrestaShop web service uses the REST architecture in order to be available o
 [REST](https://en.wikipedia.org/wiki/REST) defines roughly a style of software architecture, which promotes the use of HTTP methods when building web application, instead of custom methods or protocols such as SOAP or WSDL. It defines several rules, including one that is similar to CRUD, which is described below.
 {{% /notice %}}
 
-HTTP has several methods that can perform processing on data as defined in the REST architecture, among which are [4 main methods](https://en.wikipedia.org/wiki/HTTP#Request_methods):
+HTTP has several methods that can perform processing on data as defined in the REST architecture, among which are [5 main methods](https://en.wikipedia.org/wiki/HTTP#Request_methods):
 
 | HTTP/REST | CRUD   | SQL    |
 |-----------|--------|--------|
 | POST      | Create | INSERT |
 | GET       | Read   | SELECT |
 | PUT       | Update | UPDATE |
+| PATCH     | Update | UPDATE |
 | DELETE    | Delete | DELETE |
 
 ## Enabling & Creating an access to the webservice
@@ -31,8 +33,7 @@ Reach the [dedicated page]({{< relref "tutorials/creating-access" >}}).
 
 ## Accessing the webservice
 
-Now that your access key is generated you can test your store's webservice, its endpoint is located in the `/api/` folder at the root of your installation of Prestashop.
-The quickest way to test your API is to use your browser:
+After generating your access key, you can proceed to test your store's webservice. The webservice endpoint is located in the '/api/' folder at the root of your PrestaShop installation. To test your API quickly, you can simply use your browser:
 
 * If PrestaShop is installed at the root of your server, you can access the API here: http://example.com/api/
 * If PrestaShop is installed in a subfolder of your server, you can access the API here: http://example.com/prestashop/api/
@@ -67,8 +68,8 @@ When you call the root `/api` url you will get a summary of the available APIs y
 <?xml version="1.0" encoding="UTF-8"?>
 <prestashop xmlns:xlink="http://www.w3.org/1999/xlink">
     <api shopName="Prestashop">
-        <addresses xlink:href="http://example.com/api/addresses" get="true" put="true" post="true" delete="true" head="true">
-            <description xlink:href="http://example.com/api/addresses" get="true" put="true" post="true" delete="true" head="true">
+        <addresses xlink:href="http://example.com/api/addresses" get="true" put="true" post="true" patch="true" delete="true" head="true">
+            <description xlink:href="http://example.com/api/addresses" get="true" put="true" post="true" patch="true" delete="true" head="true">
             The Customer, Brand and Customer addresses</description>
             <schema xlink:href="http://example.com/api/addresses?schema=blank" type="blank"/>
             <schema xlink:href="http://example.com/api/addresses?schema=synopsis" type="synopsis"/>
@@ -192,14 +193,14 @@ This parameter can only be used for listings, not for individual records. If you
 {{% notice note %}}
 A response obtained with "display" other than "full" can't be used in a **PUT** (update) request, because the `WebserviceRequest` class validation for fields is the same for **POST** (create) and **PUT** (update).
 
-This should be fixed in a near future with a *yet-to-come-pull-request* introducing the PATCH method!
+The **PATCH** method allows using a partial display.
 {{% /notice %}}
 
 ##### Control returned items with "filter"
 
-The **EQUAL** operator is used when you need to get specific items. For exemple, if you want the addresses for customer #1, you can filter your **GET** request with the `filter` parameter: `http://example.com/api/addresses?filter[id_customer]=1`
+The **EQUAL** operator is used when you need to get specific items. For example, if you want the addresses for customer #1, you can filter your **GET** request with the `filter` parameter: `http://example.com/api/addresses?filter[id_customer]=1`
 
-The **LIKE** operator is used when you need to search for items. For exemple, if you want the addresses with cities starting with "SAINT": `http://example.com/api/addresses?filter[city]=[saint]%`
+The **LIKE** operator is used when you need to search for items. For example, if you want the addresses with cities starting with "SAINT": `http://example.com/api/addresses?filter[city]=[saint]%`
 
 The **OR** operator is used when you need to get items matching several criteria: `http://example.com/api/addresses?filter[city]=[paris|lyon]`
 
@@ -212,7 +213,7 @@ Other operators can be used, such as:
 
 This can be used in combination with the `display` parameter! Let's say you want to get the mobile phone numbers of customers #1, #7 and #42: `http://example.com/api/addresses?filter[id_customer]=[1|7|42]&display=[phone_mobile]`
 
-You can also filter by dates! A typical example would be a routine in an ERP fetching the orders since the last call: `http://example.com/api/orders?display=full&date=1&filter[date_add]=[2019-11-14%2013:00:00,2019-11-14%2014:00:00]`. In this exemple, we request the orders created on 2019-11-14 between 1pm and 2pm.
+You can also filter by dates! A typical example would be a routine in an ERP fetching the orders since the last call: `http://example.com/api/orders?display=full&date=1&filter[date_add]=[2019-11-14%2013:00:00,2019-11-14%2014:00:00]`. In this example, we request the orders created on 2019-11-14 between 1pm and 2pm.
 
 {{% notice note %}}
 Pay attention to: 
@@ -224,7 +225,7 @@ Pay attention to:
 
 ##### Special parameters
 
-The `date=1` parameter must be used to allow date filtering (see exemple above).
+The `date=1` parameter must be used to allow date filtering (see example above).
 
 The `limit=0,100` parameter can be used to limit the number of returned items (similar to MySQL's LIMIT clause).
 
@@ -233,6 +234,25 @@ The `sort=[field1_ASC,field2_DESC]` parameter can be used to sort the results (s
 The `language=1` or `language=[1|2]` parameter can be used to return only these languages for translatable fields (eg: product description, category name, etc.).
 
 The `sendemail=1` parameter can be used if you need to change the state of an order AND you want the emails to be sent to the customer: you will have to do a **POST** on `http://example.com/api/order_histories?sendemail=1`
+
+The `sendemail=1` parameter can be used on the `order_carriers` endpoint to send the _in-transit_ email with the tracking number. Example: `http://example.com/api/order_carriers/12345?sendemail=1`
+12345 is the order carrier id.
+
+##### Cache handling
+
+A cache mechanism has been introduced and bug fixed in {{< minver v="8.0" >}}, it allows you to detect if the content changed between your API calls. 
+
+To use it:
+
+1) in your first API call, retrieve the header `Content-Sha1` and store it on your side.
+2) in your second API call, add a `Local-Content-Sha1` header, with the previously stored `Content-Sha1` value. 
+
+If the content has not changed, the API will return a `304 Not Modified` response code.
+If the content has changed, the API will return a `200 Ok` response code. 
+
+{{% notice note %}}
+It can be used to avoid unnecessary updates if the resource didn't change since the last API call. 
+{{% /notice %}}
 
 ### Create a resource
 
@@ -243,6 +263,24 @@ PrestaShop will take care of adding everything in the database, and will return 
 ### Update a resource
 
 To edit an existing resource: **GET** the full XML file for the resource you want to change (example `/api/addresses/1`), edit its content as needed, then send a **PUT HTTP request** with the whole XML file as a body content to the same URL again.
+
+### Partially update a resource
+
+To partially edit an existing resource: **GET** a part of the XML file for the resource you want to change (example `/api/addresses/1`), edit its content as needed, then send a **PATCH HTTP request** with the partial XML file as the body content to the same URL again.
+
+When partially updating a resource, the only required parameter is the `id` of the resource. Then, add the changed `parameters`, and **PATCH** method will handle that partial update. 
+
+Example: update the company name for the address of `id=1` : `PATCH /api/addresses/1`
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<prestashop xmlns:xlink="http://www.w3.org/1999/xlink">
+    <address>
+        <id><![CDATA[1]]></id>
+        <company><![CDATA[Acme Limited]]></company>
+    </address>
+</prestashop>
+```
 
 ### Using JSON instead of XML
 
@@ -259,7 +297,7 @@ Example:
 
 ```text
 https://UCCLLQ9N2ARSHWCXLT74KUKSSK34BFKX@example.com/api/?output_format=JSON
-``` 
+```
 
 ##### HTTP header
 
